@@ -1,6 +1,7 @@
 import React from 'react'
 import FirstName from './FirstName'
 import LastName from './LastName'
+import {useDispatch} from 'react-redux';//хук useDispatch 
 
 const User = () => {
     return (
