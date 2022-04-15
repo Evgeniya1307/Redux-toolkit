@@ -11,11 +11,12 @@
   export  const userSlice = createSlice({
       name: "user",//имя данному редюсеру 
 initialState, //изночальное состояние 
-  reducers: {//редюсер обьект функций который будет управлять нашим состоянием
+  reducers: {//редюсер обьект функций который будет управлять нашим состоянием 
  setFirstName: (state, action)=> {
-   state.firstName = action.payload//action.payload -я на клиентской части буду передавать из формы и эти данные буду передавать вот именно те данные которые передаю будут находитьс яв обьекте action в поле payload  где будет например лежать имя иван 
- 
+  StyleSheet.firstName = action.payload //action.payload -я на клиентской части буду передавать из формы и эти данные буду передавать вот именно те данные которые передаю будут находитьс в обьекте action в поле payload где будет например лежать имя иван
 }, // научимся менять наш firstName: "",
-
-}
+},
 })
+
+export const {setFirstName}=userSlice.actions//setFirstName это функция доступна в любом месте приложения
+export default userSlice.reducer
