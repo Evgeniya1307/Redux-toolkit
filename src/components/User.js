@@ -2,13 +2,19 @@ import React from 'react'
 import FirstName from './FirstName'
 import LastName from './LastName'
 import {useDispatch} from 'react-redux';//хук useDispatch 
+import { setFirstName } from './features/user/userSlice';
 
 const User = () => {
+   const dispatch =useDispatch()//вызывает экшины
+   
     return (
         <div className='flex flex-col'>
             <input
                 type='text'
                 placeholder='First Name'
+                onChange={(e)=> {// у нас есть e  и нам надо вытащить value   и  e.target.value передать в функцию  setferstname и в action.payload получим value для это вызываем функцию dispatch смотри ниже
+                  dispatch(setFirstName(e.target.value))
+                    }}
                 className='w-full p-1 mb-2 focus:outline-none focus:border-lime-500 focus: border-2 placeholder:text-sm'
             />
             <input

@@ -1,8 +1,8 @@
 //slice та часть редакс тулкита которая отвечает за инитилизацию стейта в наш стор и за все функции ктороые связаны со стейтом
   import { createSlice } from "@reduxjs/toolkit";
-
-
-  const initialState = {// изначальное состояние
+import {setFirstName} from  "../../features/user/userSlice";
+  
+const initialState = {// изначальное состояние
       firstName: "",
     lastName: "",  
   }
