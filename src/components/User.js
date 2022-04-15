@@ -2,7 +2,7 @@ import React from 'react'
 import FirstName from './FirstName'
 import LastName from './LastName'
 import {useDispatch} from 'react-redux';//хук useDispatch 
-import { setFirstName } from './features/user/userSlice';
+import {setFirstName } from './features/user/userSlice';
 
 const User = () => {
    const dispatch =useDispatch()//вызывает экшины
