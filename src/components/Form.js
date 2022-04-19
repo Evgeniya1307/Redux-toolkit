@@ -7,11 +7,12 @@ import { v4 } from 'uuid';
 const Form = () => {
     //создаю обьект dispatch
     const dispatch = useDispatch()
-   
+   //создаю состояние 
+   const [todoValue, setTodoValue] = React.useState("")
    //создаю функцию и обьект
    const addTodoHandler = () => {
       const todo = {
-          id: "",
+          id: v4(),
           text: "",
           completed: false
       } 
