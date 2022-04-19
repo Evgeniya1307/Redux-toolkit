@@ -10,6 +10,10 @@ const TodoItem = ({todo}) => {//принимаем todo сoзданное в app
         dispatch(toggleCompletedTodo(id))
     }
     
+    const removeTodoHandler = (id)=> {
+dispatch(removeTodo(id))//диспатчим экшин removeTodo с параметром id
+    }
+
     return (
      
      
