@@ -22,3 +22,6 @@ export const userSlice = createSlice({
 
 export const { setFirstName, setLastName } = userSlice.actions 
 export default userSlice.reducer
+
+
+//есть какая форма где есть FirstName и LastName мы сдели две функции эскспортили и в user смотри там 
