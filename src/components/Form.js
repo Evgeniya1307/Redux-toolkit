@@ -1,10 +1,22 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
 import { addTodo } from './features/user/todo/todoSlice'
+import { v4 } from 'uuid';
+
 
 const Form = () => {
     //создаю обьект dispatch
     const dispatch = useDispatch()
+   
+   //создаю функцию и обьект
+   const addTodoHandler = () => {
+      const todo = {
+          id: "",
+          text: "",
+          completed: false
+      } 
+   }
+
     return (
         <form className='w-full flex' onSubmit={(e) => e.preventDefault()}>
             <input
