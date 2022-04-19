@@ -30,5 +30,5 @@ export const todoSlice = createSlice({
   }, //тут {state.todos.push(action.payload)}  будем чтото вводить нажимать sambit и будет добавляться         addTodo:(state, action)=>{stat
 })
 
-export const { addTodo, toggleCompletedTodo } = todoSlice.actions; // из addTodo вытянули todoSlice.actions
+export const { addTodo, toggleCompletedTodo, removeTodo } = todoSlice.actions; // из addTodo вытянули todoSlice.actions
 export default todoSlice.reducer //  и теперь его подключаем возвращаемся stor  и точно также
