@@ -4,10 +4,10 @@ import {toggleCompletedTodo, removeTodo }  from "../components/features/user/tod
 
 const TodoItem = ({todo}) => {//принимаем todo сoзданное в app
     //dispatch
-    const dispatch = useDispatch()
+    const dispatch = useDispatch()//изменяем тудушки
       //нужно передать айдишник
     const toggleTodoHandler = (id)=> {
-        dispatch(toggleCompletedTodo(id))
+        dispatch(toggleCompletedTodo(id))//теперь надо его вызвать на кнопочку делит смотри ниже вешаем onClick = {()=>removeTodoHandler и куда передаём (todo.id)которое получаем из const TodoItem = ({todo})}
     }
     
     const removeTodoHandler = (id)=> {
@@ -15,9 +15,6 @@ dispatch(removeTodo(id))//диспатчим экшин removeTodo с парам
     }
 
     return (
-     
-     
-       
        <div className='flex justify-between items-center my-2'>
             <div 
             //при нажатии  Complete
@@ -26,12 +23,16 @@ dispatch(removeTodo(id))//диспатчим экшин removeTodo с парам
                 Complete
             </div>
             
-            <div className={`text-sm ${todo.completed ? 'line-through font-medium text-lime-400' : ''}`}> 
-            
+            <div 
+            className={`text-sm ${
+                todo.completed ? 'line-through font-medium text-lime-400' : ''
+                }`}
+                > 
                {todo.text}
             </div>
-            <div className='text-sm px-4 py-2 flex bg-red-400 hover:bg-red-500 transition-all text-white cursor-pointer'>
-                Delete
+            <div 
+            onClick={()=>removeTodoHandler(todo.id)}//delete
+            className='text-sm px-4 py-2 flex bg-red-400 hover:bg-red-500 transition-all text-white cursor-pointer'>       
             </div>
         </div>
     )
