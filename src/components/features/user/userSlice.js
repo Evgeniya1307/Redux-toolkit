@@ -13,6 +13,10 @@ export const userSlice = createSlice({
     setFirstName: (state, action) => {
       state.firstName = action.payload; //action.payload -я на клиентской части буду передавать из формы и эти данные буду передавать вот именно те данные которые передаю будут находитьс в обьекте action в поле payload где будет например лежать имя иван
     }, // научимся менять наш firstName: "",
+  setLastName: (state, action)=> {
+    state.lastName = action.payload;
+  }
+  
   },
 })
 
