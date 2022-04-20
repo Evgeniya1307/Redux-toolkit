@@ -25,7 +25,7 @@ export const todoSlice = createSlice({
     },
     //удалять айтомы создали функцию
     removeTodo:(state, action)=>{
-        state.todos = state.todos.filter((todo)=>todo.id !==action.payload )// создали функцию которая принимает (state,action){ она будет state.todos изменять таким образом:=state.todos.filter он возвращает массив новый,где мы ищем элемент (todo)=> и проверяем что todo.id неравен action.payload  мы пробегаемся фильтрам по элементам todo если не совпадает todo.id !=== action.payload то мы это помещаем в стейт а тот элемент который совпадёт он останется забытым  
+        state.todos = state.todos.filter((todo)=>todo.id !== action.payload )// создали функцию которая принимает (state,action){ она будет state.todos изменять таким образом:=state.todos.filter он возвращает массив новый,где мы ищем элемент (todo)=> и проверяем что todo.id неравен action.payload  мы пробегаемся фильтрам по элементам todo если не совпадает todo.id !=== action.payload то мы это помещаем в стейт а тот элемент который совпадёт он останется забытым  
     }
   }, //тут {state.todos.push(action.payload)}  будем чтото вводить нажимать sambit и будет добавляться         addTodo:(state, action)=>{stat
 })

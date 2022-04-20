@@ -13,7 +13,7 @@ const Form = () => {
    const addTodoHandler = () => {
       const todo = {
           id: v4(),
-          text: "todoValue",
+          text: todoValue,//"" убрала 
           completed: false,// будем менять 
       } 
       //когда сформировали обьект тудушки смотри выше будем вызывать диспатч
