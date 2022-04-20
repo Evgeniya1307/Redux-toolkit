@@ -10,7 +10,7 @@ const initialState = {
 export const getPosts = createAsyncThunk(
   "posts/getPosts", //как формируется мы берем первым параметром из name название и название нашей функции posts/getPosts, вторым принимаем функцию async (принимает пелоид но в данном случаем мы делаем гет запрос к постам и ставим  _ означает что первый аргумент не требуется а второй {rejectWithValue набор обшина})=> теперь логика {нам надо сделать запрос поэтому const res = await axios.get("https://jsonplaceholder.typicode.com/posts")  }
   async (_, { rejectWithValue, dispatch }) => {
-    const res = await axios.get(`https://jsonplaceholder.typicode.com/posts/${id}sd`); //возвращается массив моих постов
+    const res = await axios.get("https://jsonplaceholder.typicode.com/posts/"); //возвращается массив моих постов
     dispatch(setPosts(res.data)); //вызвали dispatch (берём экшин setPosts куда мф передаём (res.data)) в обьекте res в его поле data  будет лежать массив того чего мы получили из await axios.get("https://jsonplaceholder.typicode.com/posts"
     //данные нужно сохранить в стейт
   }
