@@ -2,6 +2,7 @@
 // npm i axios сделали
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
+import {rejectWithValue} from "../post/postSlice";
 
 const initialState = {
   posts: [],
@@ -25,11 +26,11 @@ export const postSlice = createSlice({
       state.posts = action.payload; // action.payload поэтому там где запрос возвр,массив постов
     },
   },
-  //правильно эскпортировать getPosts в обычн,редюсерах нельзя используем extraReducers и 3 метода когогда то или иное событие происходит смотри ниже
+  //правильно эскпортировать getPosts в обычн,редюсерах нельзя используем extraReducers и 3 метода когогда то или иное событие происходит смотри ниже, rejectWithValueблагодаря этому импорту имеем доступ к нашим 3 методам
   extraReducers: {
-    [getPosts.fulfilled]: () => console.log("fullfiled"),//выполненный
-    [getPosts.pending]: () => console.log("pending"),//pending в ожидании
-    [getPosts.rejected]: () => console.log("rejected"),//rejected отклонённый
+    [getPosts.fulfilled]: () => console.log("fullfiled"),//выполненный когда наш запрос прощёл успешно
+    [getPosts.pending]: () => console.log("pending"),//pending в ожидании когда ожидаем наш запрос
+    [getPosts.rejected]: () => console.log("rejected"),//rejected отклонённый когда есть какая то ошибка
   },
 });
 
