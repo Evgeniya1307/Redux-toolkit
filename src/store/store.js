@@ -7,7 +7,7 @@ export const store = configureStore({
   reducer: {
     user: userSlice, // поле, ключ user значение userSlice
     todo: todoSlice,
-    post: todoSlice,// подключила
+    post: postSlice,// подключила
   },
 }); //слайс отвечает за ту или иную часть приложения
 
